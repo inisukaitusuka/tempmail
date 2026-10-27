@@ -1,0 +1,14 @@
+# rahasia & data pengguna (berisi token bot, password email sementara, ID Telegram)
+.env
+tempmail_data.json
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# lain-lain
+*.log
+.DS_Store
+.env

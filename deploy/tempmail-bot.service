@@ -1,0 +1,18 @@
+# Contoh service systemd. Sesuaikan path /opt/tempmail-telegram-bot dengan lokasi project kamu.
+# Pasang: sudo cp deploy/tempmail-bot.service /etc/systemd/system/
+#         sudo systemctl daemon-reload && sudo systemctl enable --now tempmail-bot
+[Unit]
+Description=Telegram TempMail Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/tempmail-telegram-bot
+EnvironmentFile=/opt/tempmail-telegram-bot/.env
+ExecStart=/opt/tempmail-telegram-bot/venv/bin/python main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
